@@ -1,0 +1,17 @@
+name: Example Workflow
+
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Use secret
+        run: echo "Using secret"
+
+      - name: Access secret
+        run: echo ${{ secrets.API_KEY }}
